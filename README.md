@@ -24,5 +24,5 @@ python todo_explorer.py
 - [x] program now runs on the current_working_directory
 - [ ] pass key and subject folder within command line arguments
 - [ ] develop a GUI
-- [ ] GUI can be used to open each file and scroll to the line where a particular @TODO exists
+- [ ] GUI can be used to open each file and scroll to the line where a particular todo exists
 - [ ] default editor can be selected or edit can take place in the GUI
