@@ -1,6 +1,11 @@
 # TODOExplorer
 ### An idea of a utility to crawl through code folders, find @TODO (or other key) comments in code and present them on an interactive interface
 
+Developing this as a Python exercise and for own use :) - I write @TODO in commented lines in source code
+where I've got something to complete, fix or pimp a little
+
+key and path to root code catalogue will be passed through CLI arguments, and later through a GUI
+
 ## How to run
 - clone or download the repository
 - open a shell in the repository folder
@@ -8,12 +13,8 @@
 ```bash
 python todo_explorer.py
 ```
-- for now JSON formatted results will be printed out as a result
+- for now JSON formatted results will be printed as output
 
-Developing this as a Python exercise and for own use :) - I write @TODO in commented lines in source code
-where I've got something to complete, fix or pimp a little
-
-key and path to root code catalogue will be passed through CLI arguments, and later through a GUI
 
 ## Planned features:
 
