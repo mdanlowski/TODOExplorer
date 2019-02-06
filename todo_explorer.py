@@ -1,6 +1,7 @@
 from lib import prepare_files, prepare_tree
 import json
 from datetime import datetime as dt
+from pathlib import Path
 
 TODOS = {}
 KEY = '@TODO'
@@ -11,7 +12,7 @@ files = prepare_files( prepare_tree() )
 todo_count = 0
 
 for f in files:
-    current_filename = f.name
+    current_filename = f.name.replace('\\', '/' , -1)
     TODOS[current_filename] = {}
 
     try:
@@ -28,6 +29,16 @@ for f in files:
     
     f.close()
 
+res_f_name = 'results_' + dt.isoformat(dt.now())[:-7].replace(":","-", -1).replace("T", "_") + '.json'
 
+results = open(res_f_name, 'x')
+results.write(json.dumps(TODOS, indent=2, sort_keys=True))
 
-print(json.dumps(TODOS, indent=2), '\n\n', 'found: ', todo_count, "ToDos", "in", len(TODOS.keys()), "files")
+results.close()
+
+# print(json.dumps(TODOS, indent=2), '\n\n', 'found: ', todo_count, "ToDos", "in", len(TODOS.keys()), "files")
+
+'''
+    PATH CONVERSION: Pathlib,
+    Path("C:/Users/marcin.danlowski/GIT/TODOExplorer/test/test nested/test.txt")
+'''

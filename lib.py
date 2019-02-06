@@ -1,5 +1,6 @@
 import sys
 import os
+from pathlib import Path
 
 def excluded_filetypes():
     return [\
@@ -45,4 +46,7 @@ def prepare_tree():
     for r, d, p in os.walk(root_path):
         paths += [os.path.join(r, x) for x in p if (x[x.rfind('.'):].lower() not in excluded_filetypes() and x.rfind('.') > 0 )]
     
+    for p in paths:
+        p = Path(p)
+
     return paths
