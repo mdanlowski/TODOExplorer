@@ -1,4 +1,4 @@
-# TODOExplorer
+# TODOExplorer :snake:
 ### An idea of a utility to crawl through code folders, find @TODO (or other key) comments in code and present them on an interactive interface
 
 Developing this as a Python exercise and for own use :) - I write @TODO in commented lines in source code
