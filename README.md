@@ -13,7 +13,7 @@ key and path to root code catalogue will be passed through CLI arguments, and la
 ```pwsh
 python todo_explorer.py
 ```
-- for now JSON formatted results will be printed as output
+- for now JSON formatted results will be generated in a file 
 - test folder contains documents the program will use
 
 ## Planned features:
@@ -26,3 +26,4 @@ python todo_explorer.py
 - [ ] develop a GUI
 - [ ] GUI can be used to open each file and scroll to the line where a particular todo exists
 - [ ] default editor can be selected or edit can take place in the GUI
+- [x] generate JSON file with results
