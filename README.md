@@ -10,11 +10,11 @@ key and path to root code catalogue will be passed through CLI arguments, and la
 - clone or download the repository
 - open a shell in the repository folder
 - run
-```bash
+```pwsh
 python todo_explorer.py
 ```
 - for now JSON formatted results will be printed as output
-
+- test folder contains documents the program will use
 
 ## Planned features:
 
