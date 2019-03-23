@@ -10,29 +10,33 @@ print(dt.now())
 
 files = prepare_files( prepare_tree() )
 todo_count = 0
+file_id = 1
 
 for f in files:
-    current_filename = f.name.replace('\\', '/' , -1)
-    TODOS[current_filename] = {}
+    current_filename = f.name.replace('\\', '/' , -1) # WINDOWS !!!
+    TODOS[str(file_id)] = {}
+    TODOS[str(file_id)]["file_path"] = current_filename
+    TODOS[str(file_id)]["contents"] = {}
 
     try:
         for lix, line in enumerate(f.readlines()):
             if KEY in line:
-                TODOS[current_filename][lix+1] = line
+                TODOS[str(file_id)]["contents"][lix+1] = line
                 todo_count += 1     
     except UnicodeDecodeError as e:
         print(e)
         continue
 
-    if len(TODOS[current_filename].keys()) == 0:
-        del TODOS[current_filename]
-    
+    if len(TODOS[str(file_id)]["contents"].keys()) == 0:
+        del TODOS[str(file_id)]
+
+    file_id += 1
     f.close()
 
 res_f_name = 'results_' + dt.isoformat(dt.now())[:-7].replace(":","-", -1).replace("T", "_") + '.json'
 
 results = open(res_f_name, 'x')
-results.write(json.dumps(TODOS, indent=2, sort_keys=True))
+results.write(json.dumps(TODOS, indent=2, sort_keys=False))
 
 results.close()
 
